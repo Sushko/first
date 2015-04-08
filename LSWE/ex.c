@@ -9,7 +9,7 @@ void *print_hello_world(void *tid)
 	printf("Привет, мир. Тебя приветствует поток № %d\n", tid);
 	pthread_exit(NULL);
 }
-
+/*Test*/
 int main(int argc, char *argv[])
 {
 	/* Основная программа создает 10 потоков, а затем осуществляет выход. */
