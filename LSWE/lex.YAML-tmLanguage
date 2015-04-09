@@ -1,0 +1,36 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Lex
+scopeName: text.lex
+fileTypes: [lex]
+uuid: 0f1542b9-eac7-485c-ade4-2f952adb4de5
+
+patterns:
+- comment: Match all digits
+  name: constant.numeric.lex
+  match: (\d+)
+
+- comment: Match headlines in [..]
+  name: keyword.other.lex
+  begin: ^(\s*+)\[(\^?\])? # TOCHECK: "[^]]" and "[]]" valid?
+  end: \]
+
+- comment: Match line comments "--,""
+  name: keyword.other.lex
+  begin: \/\*
+  end: \*\/
+
+- comment: Match line comments "--""
+  name: keyword.other.lex
+  begin: ^(\s*+)(\-\-|\/\/|\#)
+  end: $
+
+- comment: Match menu items [..]
+  name: constant.numeric.lex
+  match: ([0-9])(\))
+
+- comment: Match keywords
+  name: variable.complex.lex
+  match: (lex)
+
+...
