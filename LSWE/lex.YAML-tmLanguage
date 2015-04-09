@@ -15,22 +15,22 @@ patterns:
   begin: ^(\s*+)\[(\^?\])? # TOCHECK: "[^]]" and "[]]" valid?
   end: \]
 
-- comment: Match line comments "--,""
+- comment: Match block comments /*...*/
   name: keyword.other.lex
   begin: \/\*
   end: \*\/
 
-- comment: Match line comments "--""
+- comment: Match line comments --, //, #
   name: keyword.other.lex
-  begin: ^(\s*+)(\-\-|\/\/|\#)
+  begin: (\s+)(\-\-|\/\/|\#)
   end: $
 
 - comment: Match menu items [..]
   name: constant.numeric.lex
-  match: ([0-9])(\))
+  match: ([0-9]\)) # still don't work
 
 - comment: Match keywords
   name: variable.complex.lex
-  match: (lex)
+  match: (lex) # add matches
 
 ...
